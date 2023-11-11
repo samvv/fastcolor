@@ -21,5 +21,6 @@
   "bugs": {
     "url": "https://github.com/samvv/fastcolor/issues"
   },
-  "homepage": "https://github.com/samvv/fastcolor#readme"
+  "homepage": "https://github.com/samvv/fastcolor#readme",
+  "sideEffects": false
 }
