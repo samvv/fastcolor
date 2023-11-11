@@ -1,0 +1,25 @@
+{
+  "name": "fastcolor",
+  "version": "1.0.0",
+  "description": "Fast color conversion library for JavaScript/TypeScript",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samvv/fastcolor.git"
+  },
+  "keywords": [
+    "color",
+    "conversion",
+    "performance",
+    "library"
+  ],
+  "author": "Sam Vervaeck",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/samvv/fastcolor/issues"
+  },
+  "homepage": "https://github.com/samvv/fastcolor#readme"
+}
