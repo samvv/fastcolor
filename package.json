@@ -4,7 +4,8 @@
   "description": "Fast color conversion library for JavaScript/TypeScript",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "gen-test-data": "bun ./genData.js > src/test-data.json"
   },
   "repository": {
     "type": "git",
@@ -22,5 +23,9 @@
     "url": "https://github.com/samvv/fastcolor/issues"
   },
   "homepage": "https://github.com/samvv/fastcolor#readme",
-  "sideEffects": false
+  "sideEffects": false,
+  "devDependencies": {
+    "bun-types": "^1.0.11",
+    "colorjs.io": "^0.4.5"
+  }
 }
