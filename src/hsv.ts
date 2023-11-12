@@ -1,13 +1,13 @@
 
 import type { RGB } from "./rgb"
 import type { HSL } from "./hsl"
-import { EPSILON } from "./common";
+import { EPSILON, colorTag } from "./common";
 import { mod } from "./util"
 
-export type HSV = [h: number, s: number, b: number, a?: number];
+export type HSV = [h: number, s: number, b: number, a?: number] & { [colorTag]: 'hsv' };
 
 export function create(h: number, s: number, v: number, a?: number): HSV {
-  return [ h, s / 100, v / 100, a ];
+  return [ h, s, v, a ] as HSV;
 }
 
 export function strictEqual(a: HSL, b: HSL): boolean {
@@ -44,11 +44,11 @@ export function fromRGB(rgb: RGB): HSV | undefined {
       h = (60 * (r - g) / d) + 240;
   }
   const s = d / M;
-  return [h, s, M, a];
+  return create(h, s, M, a);
 }
 
 export function fromHSL([h, s, l, a]: HSL): HSV {
   const b = (2 * l + s * (1 - Math.abs(2 * l - 1))) / 2
   const s2 = 2 * (b - l) / b;
-  return [h, s2, b, a];
+  return create(h, s2, b, a);
 }

@@ -1,13 +1,13 @@
-import { assertNever, clamp } from "./util";
+import { clamp } from "./util";
 
 import { HSL } from "./hsl"
 import { HSV } from "./hsv"
-import { EPSILON } from "./common";
+import { EPSILON, colorTag } from "./common";
 
-export type RGB = [r: number, g: number, b: number, a?: number];
+export type RGB = [r: number, g: number, b: number, a?: number] & { [colorTag]: 'rgb' };
 
 export function create(r: number, g: number, b: number, a?: number): RGB {
-  return [ r, g, b, a ];
+  return [ r, g, b, a ] as RGB;
 }
 
 export function strictEqual(a: RGB, b: RGB): boolean {
@@ -26,14 +26,14 @@ export function equal(a: RGB, b: RGB): boolean {
 
 export function setAlpha(color: RGB, a: number): RGB {
   const [r,g,b] = color;
-  return [r,g,b,a];
+  return create(r,g,b,a);
 }
 
 export function fromNumber(x: number): RGB {
   let r = (x >> 16) & 0xFF;
   let g = (x >> 8) & 0xFF;
   let b = (x >> 0) & 0xFF;
-  return [r, g, b];
+  return create(r, g, b);
 }
 
 export function fromHSL([h, s, l]: HSL): RGB {
@@ -45,7 +45,7 @@ export function fromHSL([h, s, l]: HSL): RGB {
   const r = f(0);
   const g = f(8);
   const b = f(4);
-  return [r, g, b];
+  return create(r, g, b);
 }
 
 export function fromHSV([h, s, v, a]: HSV): RGB {
@@ -134,7 +134,7 @@ export function fromHSV([h, s, v, a]: HSV): RGB {
       throw new Error(`Code that should have been unreachable was executed.`);
   }
 
-  return [r,g,b,a];
+  return create(r,g,b,a);
 }
 
 export function toHex(color: RGB): string {

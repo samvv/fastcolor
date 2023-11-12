@@ -12,8 +12,8 @@ for (let i = 0; i < numItems; i++) {
   const [h2, s2, b2] = color.to('hsv').coords;
   out.push({
     rgb: [ r, g, b ],
-    hsl: [ h1, s1, l1],
-    hsv: [ h2, s2, b2],
+    hsl: [ h1, s1 / 100, l1 / 100],
+    hsv: [ h2, s2 / 100, b2 / 100],
   });
 }
 
