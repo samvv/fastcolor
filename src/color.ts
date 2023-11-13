@@ -1,7 +1,7 @@
 import { assertNever } from "./util";
 
 import * as HSL from "./hsl"
-import * as HSV from "./hsb"
+import * as HSV from "./hsv"
 import * as RGB from "./rgb"
 
 export type Color = HSLColor | RGBColor | HSVColor;
@@ -27,7 +27,7 @@ export function isHSL(color: Color): color is HSLColor {
 }
 
 export function createHSL(h: number, s: number, l: number): Color {
-  return [ColorType.HSL, [h, s, l]];
+  return [ColorType.HSL, HSL.create(h, s, l)];
 }
 
 export function toHSL(color: Color): HSL.HSL | undefined {
@@ -56,7 +56,7 @@ export function isRGB(color: Color): color is RGBColor {
 }
 
 export function createRGB(r: number, g: number, b: number): Color {
-  return [ColorType.RGB, [r, g, b]]
+  return [ ColorType.RGB, RGB.create(r, g, b) ]
 }
 
 export function toRGB(color: Color): RGB.RGB {
