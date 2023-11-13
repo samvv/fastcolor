@@ -4,7 +4,7 @@
   "description": "Fast color conversion library for JavaScript/TypeScript",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "bun test",
     "gen-test-data": "bun ./genData.js > src/test-data.json"
   },
   "repository": {
