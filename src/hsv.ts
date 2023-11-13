@@ -10,13 +10,13 @@ export function create(h: number, s: number, v: number, a?: number): HSV {
   return [ h, s, v, a ] as HSV;
 }
 
-export function strictEqual(a: HSL, b: HSL): boolean {
+export function strictEqual(a: HSV, b: HSV): boolean {
   const [h1, s1, v1] = a;
   const [h2, s2, v2] = b;
   return h1 === h2 && s1 === s2 && v1 === v2;
 }
 
-export function equal(a: HSL, b: HSL): boolean {
+export function equal(a: HSV, b: HSV): boolean {
   const [h1, s1, v1] = a;
   const [h2, s2, v2] = b;
   return (Math.abs(h2 - h1) < EPSILON)

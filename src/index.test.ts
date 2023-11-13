@@ -4,7 +4,6 @@ import { expect, test } from "bun:test"
 import testData from "./test-data.json"
 
 import { RGB, HSL, HSV } from "."
-import { watch } from "fs";
 
 test('convert from RGB to HSL and back', () => {
   const color1 = RGB.create(0.11, 0.5, 0.8);
@@ -34,7 +33,7 @@ test('RGB to HSV', () => {
     const [r,g,b] = color.rgb;
     const [h, s, v] = color.hsv;
     const rgb = RGB.create(r, g, b);
-    const expected = HSL.create(h, s, v);
+    const expected = HSV.create(h, s, v);
     const actual = HSV.fromRGB(rgb);
     expect(actual).not.toBeUndefined();
     expect(HSV.equal(actual!, expected)).toBeTruthy();
@@ -49,7 +48,7 @@ test('HSL to RGB', () => {
     const expected = RGB.create(r, g, b);
     const actual = RGB.fromHSL(hsl);
     expect(actual).not.toBeUndefined();
-    expect(HSL.equal(actual!, expected)).toBeTruthy();
+    expect(RGB.equal(actual!, expected)).toBeTruthy();
   }
 });
 
@@ -61,7 +60,7 @@ test('HSV to RGB', () => {
     const expected = RGB.create(r, g, b);
     const actual = RGB.fromHSV(hsv);
     expect(actual).not.toBeUndefined();
-    expect(HSV.equal(actual!, expected)).toBeTrue();
+    expect(RGB.equal(actual!, expected)).toBeTrue();
   }
 });
 
