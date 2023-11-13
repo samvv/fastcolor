@@ -1,4 +1,4 @@
-# Fast Color Library for JavaScript/Typescript
+# Fast Color Library
 
 This is a color conversion library that has been optimised for speed and
 accuracy. In a similar fashion to [gl-matrix][glm], this library consists
