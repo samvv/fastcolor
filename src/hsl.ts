@@ -58,7 +58,7 @@ export namespace HSL {
     return create(h, s, l, a);
   }
 
-  export function fromHSB(hsb: HSV): HSL {
+  export function fromHSV(hsb: HSV): HSL {
     const [h, s, b] = hsb;
     const l = 0.5 * b * (2 - s);
     const s2 = (b * s) / (1 - Math.abs(2 * l - 1));

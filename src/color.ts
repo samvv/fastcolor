@@ -84,7 +84,7 @@ export function toHSL(color: Color): HSL | undefined {
     case ColorType.HSL:
       return color[1];
     case ColorType.HSV:
-      return HSL.fromHSB(color[1]);
+      return HSL.fromHSV(color[1]);
     case ColorType.RGB:
       return HSL.fromRGB(color[1]);
     default:
