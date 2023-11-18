@@ -4,9 +4,11 @@
   "description": "Fast color conversion library for JavaScript/TypeScript",
   "main": "lib/index.js",
   "scripts": {
+    "prepare": "tsc",
     "test": "bun test",
     "gen-test-data": "bun ./genData.js > src/test-data.json"
   },
+  "module": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/samvv/fastcolor.git"
