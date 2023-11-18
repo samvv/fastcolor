@@ -26,6 +26,7 @@
   "sideEffects": false,
   "devDependencies": {
     "bun-types": "^1.0.11",
-    "colorjs.io": "^0.4.5"
+    "colorjs.io": "^0.4.5",
+    "typedoc": "^0.25.3"
   }
 }
