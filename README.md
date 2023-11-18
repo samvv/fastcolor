@@ -15,7 +15,7 @@ bundlers.
 
 ## Documentation
 
-The documentation is rendered using TypeDoc and [avaialable online][docs].
+The documentation is rendered using TypeDoc and [available online][docs].
 
 [docs]: https://samvv.github.io/fastcolor/
 
