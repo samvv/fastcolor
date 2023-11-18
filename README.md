@@ -2,7 +2,7 @@
 
 This is a color conversion library that has been optimised for speed and
 accuracy. In a similar fashion to [gl-matrix][glm], this library consists
-mostly out of pure functions that can easily be optimised by VMs and web
+entirely out of pure functions that can easily be optimised away by VMs and web
 bundlers.
 
  - **Full support for tree shaking.** Distribute only what you need!
