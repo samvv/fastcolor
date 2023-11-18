@@ -13,9 +13,11 @@ bundlers.
 
  [glm]: https://glmatrix.net/
 
- ## Reference
+## Documentation
 
- The reference is a WIP and will be updated once `v1.0.0` publishes.
+The documentation is rendered using TypeDoc and [avaialable online][docs].
+
+[docs]: https://samvv.github.io/fastcolor/
 
 ## License
 
